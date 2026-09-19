@@ -75,111 +75,51 @@ Invoices with discrepancies are sent to Human Review with the validation reason 
 
 📊 Dashboard
 
-The dashboard provides a quick view of:
+The dashboard provides visibility into:
 
-Total invoices
+- Total number of invoices
+- Approved invoices
+- Invoices requiring review
+- Unpaid invoice value
+- Total invoice value
+- Expected vs Actual values
+- Invoice volume
+- Validation mix
+- Payment status
+- Review queue
+- Recent invoices
 
-Approved invoices
+## Tech Stack
 
-Review-required invoices
+- Python
+- Streamlit
+- Pydantic
+- Groq
+- Pandas
+- Plotly
+- SQLite
+- python-dotenv
 
-Unpaid value
+## Project Structure
 
-Total invoice value
-
-Expected vs Actual amounts
-
-Invoice volume
-
-Payment status
-
-Validation mix
-
-Review queue
-
-Recent invoices
-
-Charts can be explored across Day, Week, Month, and Year.
-
-🛠️ Built With
-
-🐍 Python · 🎈 Streamlit · 🧩 Pydantic · ⚡ Groq · 🐼 Pandas · 📊 Plotly · 🗄️ SQLite · 🔐 python-dotenv
-
-🚀 Run Locally
-
-Clone the repository:
-
-git clone https://github.com/buildwithharshit/paperwork-hub.git
-cd paperwork-hub
-
-Create and activate a virtual environment:
-
-python -m venv .venv
-
-Windows:
-
-.venv\Scripts\activate
-
-Install dependencies:
-
-pip install -r requirements.txt
-
-Create a .env file:
-
-GROQ_API_KEY=your_api_key_here
-
-Run the application:
-
-streamlit run app.py
-
-🧪 Test It
-
-Generate test invoices with:
-
-python generate_test_data.py
-
-Test scenarios include:
-
-✅ Valid invoices
-
-⚠️ Line-item mismatches
-
-⚠️ Subtotal mismatches
-
-⚠️ Total mismatches
-
-⚠️ Tax discrepancies
-
-🔁 Duplicate invoices
-
-📦 Batch processing
-
-🔐 Security
-
-Sensitive files such as .env, .venv/, __pycache__/, and invoices.db are excluded from the repository.
-
-Never commit your API key.
-
-🔮 What's Next
-
-📄 PDF invoice support
-
-🖼️ OCR and image invoices
-
-☁️ Cloud database
-
-👥 Multi-user access
-
-🔐 Role-based permissions
-
-📧 Automated notifications
-
-🔗 Accounting integrations
-
-👨‍💻 Built by Harshit Yadav
-
-Business × Finance × Technology × Automation
-
-GitHub
-
-⭐ Paperwork Hub — from invoice documents to verified financial records.
+```text
+Paperwork Hub/
+│
+├── .streamlit/
+│   └── config.toml
+│
+├── ui/
+│   ├── __init__.py
+│   ├── charts.py
+│   ├── components.py
+│   └── theme.py
+│
+├── app.py
+├── database.py
+├── invoice_processor.py
+├── validator.py
+├── generate_test_data.py
+├── sample_invoice.txt
+├── requirements.txt
+├── README.md
+└── .gitignore
